@@ -23,7 +23,7 @@ function CurrencyPicker({
                         {changeFrom}
                     </Button>
                 </PopoverTrigger>
-                <PopoverContent>
+                <PopoverContent className="bg-white">
                     <Command className="w-full">
                         <CommandInput placeholder="Search currency" />
                         <CommandList>
@@ -57,7 +57,7 @@ function CurrencyPicker({
                         {changeTo}
                     </Button>
                 </PopoverTrigger>
-                <PopoverContent>
+                <PopoverContent className="bg-white">
                     <Command className="w-full">
                         <CommandInput placeholder="Search currency" />
                         <CommandList>
