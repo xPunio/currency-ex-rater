@@ -124,7 +124,7 @@ function App() {
                         <div className="flex justify-between items-center ml-20">
                             <Select
                                 value={timeSlot.toString()}
-                                onValueChange={(value) =>
+                                onValueChange={(value: string) =>
                                     setTimeSlot(Number(value))
                                 }
                                 defaultValue={timeSlot.toString()}
