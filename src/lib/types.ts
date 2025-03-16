@@ -1,21 +1,21 @@
 export interface CurrencyInList {
-    code: string;
-    name: string;
+    readonly code: string;
+    readonly name: string;
 }
 
 export interface Currency {
-    amount: number;
-    base: string;
-    date: string;
-    rates: {
+    readonly amount: number;
+    readonly base: string;
+    readonly date: string;
+    readonly rates: {
         [key: string]: Rate;
     };
 }
 export interface Rate {
-    [key: string]: number;
+    readonly [key: string]: number;
 }
 
 export interface RateData {
-    date: string;
-    rate: number;
+    readonly date: string;
+    readonly rate: number;
 }
