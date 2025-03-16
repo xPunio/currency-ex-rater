@@ -82,8 +82,8 @@ function App() {
     return (
         <div className="flex justify-center items-center h-screen">
             <Card className="shadow-2xl relative">
-                <CardContent className="flex flex-row gap-4 items-center">
-                    <div className="flex flex-col gap-4">
+                <CardContent className="flex lg:flex-row flex-col gap-4 items-center">
+                    <div className="flex flex-col gap-4 max-md:pt-8">
                         <CardTitle className="flex items-center gap-2 absolute top-0 left-0 p-4">
                             <CircleDollarSign className="w-8 h-8" />
                             <span>Currency Converter</span>
@@ -120,8 +120,8 @@ function App() {
                             />
                         </div>
                     </div>
-                    <div className="w-[500px] h-[350px] relative">
-                        <div className="flex justify-between items-center ml-20">
+                    <div className="w-[500px] h-[350px] relative max-lg:mt-8">
+                        <div className="flex justify-between items-center lg:ml-20">
                             <Select
                                 value={timeSlot.toString()}
                                 onValueChange={(value: string) =>
@@ -132,7 +132,7 @@ function App() {
                                 <SelectTrigger className="w-30">
                                     <SelectValue placeholder="Select a time slot" />
                                 </SelectTrigger>
-                                <SelectContent>
+                                <SelectContent className="bg-white">
                                     <SelectItem value="7">7-days</SelectItem>
                                     <SelectItem value="14">14-days</SelectItem>
                                     <SelectItem value="30">30-days</SelectItem>

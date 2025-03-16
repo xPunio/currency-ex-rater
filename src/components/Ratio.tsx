@@ -6,7 +6,7 @@ function Ratio({ currency, currencyTo, latestRate }: RatioProps) {
     const [isRising, setIsRising] = useState(false);
 
     useEffect(() => {
-        if (currency && Object.keys(currency.rates).length >= 2) {
+        if (currency?.rates && Object.keys(currency?.rates).length >= 2) {
             const values = Object.values(currency.rates);
             const previousRate = values.at(-2)?.[currencyTo] ?? 0;
             if (latestRate && previousRate) {
@@ -15,6 +15,7 @@ function Ratio({ currency, currencyTo, latestRate }: RatioProps) {
         }
     }, [currency, currencyTo, latestRate]);
 
+    if (!currency) return null;
     return (
         <div className="flex gap-2 items-center justify-center h-6">
             {currency && (

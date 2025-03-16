@@ -31,8 +31,13 @@ function CurrencyPicker({
                                 <CommandItem
                                     key={curr.code}
                                     onSelect={() => {
-                                        setChangeFrom(curr.code);
-                                        setIsOpenFrom(false);
+                                        if (curr.code === changeTo) {
+                                            setChangeFrom(changeTo);
+                                            setChangeTo(changeFrom);
+                                        } else {
+                                            setChangeFrom(curr.code);
+                                            setIsOpenFrom(false);
+                                        }
                                     }}
                                 >
                                     {curr.name} ({curr.code})
@@ -65,8 +70,13 @@ function CurrencyPicker({
                                 <CommandItem
                                     key={curr.code}
                                     onSelect={() => {
-                                        setChangeTo(curr.code);
-                                        setIsOpenTo(false);
+                                        if (curr.code === changeFrom) {
+                                            setChangeTo(changeFrom);
+                                            setChangeFrom(changeTo);
+                                        } else {
+                                            setChangeTo(curr.code);
+                                            setIsOpenTo(false);
+                                        }
                                     }}
                                 >
                                     {curr.name} ({curr.code})

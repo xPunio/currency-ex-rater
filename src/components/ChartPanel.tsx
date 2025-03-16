@@ -12,6 +12,7 @@ import { RateData } from "@/lib/types";
 
 function ChartPanel({ changeTo, currency }: ChartPanelProps) {
     const [chartData, setChartData] = useState<RateData[]>([]);
+    console.log(currency);
 
     useEffect(() => {
         if (currency) {
@@ -39,9 +40,12 @@ function ChartPanel({ changeTo, currency }: ChartPanelProps) {
                     <YAxis
                         type="number"
                         domain={[
-                            (dataMin: number) => (dataMin * 0.99).toFixed(2),
-                            (dataMax: number) => (dataMax * 1.01).toFixed(2),
+                            (dataMin: number) => dataMin * 0.99,
+                            (dataMax: number) => dataMax * 1.01,
                         ]}
+                        tickFormatter={(tick) =>
+                            (Math.floor(tick * 100) / 100).toString()
+                        }
                         tickMargin={10}
                     />
                     <Tooltip />
